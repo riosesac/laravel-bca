@@ -1,0 +1,54 @@
+{
+    "name": "riotinto/bankbca",
+    "description": "ini untuk api ke bank bca",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "riosesac",
+            "email": "arjunariotinto@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*",
+        "illuminate/support": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x|5.8.x",
+        "illuminate/contracts": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x|5.8.x",
+        "graham-campbell/manager": "^2.4 || ^3.0 || ^4.0",
+        "riotinto/sourcebca": "1.*"
+    },
+    "require-dev": {
+      "graham-campbell/testbench": "^3.2 || ^4.0 || ^5.0",
+      "mockery/mockery": "^0.9.5 || ~1.0",
+      "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0 || ^7.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "Riotinto\\Bankca\\": "src/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Riotinto\\Cobas\\Bankbca\\": "cobas/"
+      }
+    },
+    "config": {
+      "preferred-install": "dist"
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Riotinto\\Bankbca\\BankBcaServiceProvider"
+        ],
+        "aliases": {
+          "Bankbca": "Riotinto\\Bankbca\\Facades\\Bankbca"
+        }
+      }
+    },
+    "scripts": {
+      "test": "phpunit",
+      "test:ci": "composer coba -- --verbose --coverage-text --coverage-clover=coverage.xml"
+    },
+    "prefer-stable": true
+}
